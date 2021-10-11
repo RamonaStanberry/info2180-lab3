@@ -23,7 +23,7 @@ function whoWins(array){
             stats.className+=" you-won";
             stats.innerHTML="Congratulations! X is the Winner!"
         }
-        else if(array[i[0]]=='O' && array[i[1]]=='O' && array[i[2]]=='O'){
+        if(array[i[0]]=='O' && array[i[1]]=='O' && array[i[2]]=='O'){
             stats.className+=" you-won";
             stats.innerHTML="Congratulations! O is the Winner!"  
         }
@@ -39,6 +39,7 @@ onload=function(){
     const p2='O';
     var game_state=[];
     let this_player= p2;
+    var button= document.querySelector(".btn");
 
     for(let i=0;i<=8;i++){
         allSquares[i].addEventListener('click',function(){
@@ -64,8 +65,12 @@ onload=function(){
         allSquares[i].addEventListener("mouseleave", event => {
             allSquares[i].classList.remove('hover');
         });
-    }
 
+
+    }
+    button.addEventListener('click',function(){
+        location.reload();
+    })
 
 
 }   
